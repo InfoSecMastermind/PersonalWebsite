@@ -75,7 +75,7 @@ const Home = () => {
               CONTACT ME
             </Link>
             {/* ✅ Extremely Slow Growing Resume Button */}
-            <GrowingButton href="/Resume.pdf" download>
+            <GrowingButton href="/Muhammad Ali's Resume.pdf" download>
               DOWNLOAD RESUME
             </GrowingButton>
           </div>
