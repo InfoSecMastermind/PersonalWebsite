@@ -1,4 +1,4 @@
-# Personal Website / Portfolio / Resume
+# Personal Portfolio / Resume Website
 
 My own personal website, built using REACT
 
