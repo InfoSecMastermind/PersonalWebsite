@@ -1,3 +1,9 @@
+# Personal Website / Portfolio / Resume
+
+My own personal website, built using REACT
+
+Feel free to check it out or customize it accordingly for yourself by forking it.
+
 https://alinafees.com -- Personal website
 
 
