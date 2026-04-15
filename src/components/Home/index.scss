@@ -1,11 +1,21 @@
 .home-page {
+  // Override .container stacking context so the growing button can overflow everything
+  &.container {
+    transform-style: flat;
+    z-index: auto;
+  }
+
   .text-zone {
     position: absolute;
     left: 10%;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 40%;
-    max-height: 90%;
+    max-height: 100%;
+    z-index: 1;
 
     h1 {
       color: #fff;
@@ -60,15 +70,15 @@
     animation: fadeIn 1s 1.8s backwards;
   }
 
-  /* ✅ Buttons Container */
+  /* Buttons Container */
   .buttons-container {
     display: flex;
-    gap: 15px; /* Space between buttons */
+    gap: 15px;
     margin-top: 25px;
     flex-wrap: wrap;
   }
 
-  /* ✅ General Button Style */
+  /* General Button Style */
   .flat-button {
     color: #00ff00;
     font-size: 13px;
@@ -89,14 +99,15 @@
     }
   }
 
-  /* ✅ Download Button Styling */
+  /* Download Button Styling */
   .download-button {
-    border-color: #ffcc00;
-    color: #ffcc00;
+    border-color: #ff4500;
+    color: #ff4500;
+    animation: fadeInAnimation 1s 1.8s backwards;
 
     &:hover {
-      background: #ffcc00;
-      color: black;
+      background: #ff4500;
+      color: #fff;
     }
   }
 
@@ -107,24 +118,52 @@
     -o-user-select: none;
     user-select: none;
   }
+}
 
-  /* ✅ Responsive Fix */
-  @media (max-width: 600px) {
+// Mobile responsive
+@media (max-width: 768px) {
+  .home-page {
+    .text-zone {
+      position: relative;
+      left: 0;
+      top: 0;
+      bottom: auto;
+      display: block;
+      width: 100%;
+      max-height: none;
+      padding: 60px 0 20px;
+
+      h1 {
+        font-size: 32px;
+        line-height: 40px;
+
+        &:before,
+        &:after {
+          display: none;
+        }
+      }
+
+      img {
+        width: 24px;
+        margin-left: 10px;
+      }
+    }
+
+    h2 {
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
     .buttons-container {
       flex-direction: column;
-      align-items: center;
+      align-items: stretch;
       gap: 10px;
     }
 
     .flat-button {
       width: 100%;
+      box-sizing: border-box;
+      text-align: center;
     }
   }
 }
-.home-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-

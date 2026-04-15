@@ -1,26 +1,21 @@
 import { useEffect, useState } from 'react'
 
-// ✅ External Libraries (Sorted Alphabetically)
 import Loader from 'react-loaders'
 import { Link } from 'react-router-dom'
-import styled, { css, keyframes } from 'styled-components' // ✅ 'css' comes before 'keyframes'
+import styled, { keyframes } from 'styled-components'
 
-// ✅ Internal Components (Sorted Alphabetically)
 import AnimatedLetters from '../AnimatedLetters'
 import Logo from './Logo'
 import LogoTitle from '../../assets/images/logo-s.png'
 
-// ✅ Styles at the End
 import './index.scss'
 
-
-// 🔥 Super Slow Growth Animation (15 seconds)
 const slowGrow = keyframes`
   0% {
     transform: scale(1);
   }
   100% {
-    transform: scale(100); /* Expands extremely slowly */
+    transform: scale(100);
   }
 `
 
@@ -32,10 +27,10 @@ const GrowingButton = styled.a`
   background-color: red;
   border: none;
   text-decoration: none;
-  transition: transform 250s linear; /* Super slow expansion */
+  transition: transform 250s linear;
 
   &:hover {
-    animation: ${slowGrow} 250s forwards; /* Grows very slowly */
+    animation: ${slowGrow} 250s forwards;
   }
 `
 
@@ -69,12 +64,11 @@ const Home = () => {
           </h1>
           <h2>Streamlining DevOps Workflows | Designing and Deploying Scalable & Secure Systems</h2>
 
-          {/* ✅ Buttons Container */}
+          {/* Buttons Container */}
           <div className="buttons-container">
             <Link to="/contact" className="flat-button">
               CONTACT ME
             </Link>
-            {/* ✅ Extremely Slow Growing Resume Button */}
             <GrowingButton href="/Muhammad Ali's Resume.pdf" download>
               DOWNLOAD RESUME
             </GrowingButton>
